@@ -32,7 +32,6 @@ const initCvs=()=> {
   cvs.value.width=window.innerWidth*devicePixelRatio;
   cvs.value.height=(window.innerHeight/2)*devicePixelRatio;
   
-  console.log(cvs.value.height,'cvs.value.height')
 };
 // 是否已初始化
 let isInit=ref(false);
@@ -43,7 +42,6 @@ let analyser=ref();
 // 音频播放事件
 const playAudio=()=> {
   // 判断是否初始化
-  console.log(isInit.value,'playAu')
   if(isInit.value){
     return;
   }
@@ -56,7 +54,6 @@ const playAudio=()=> {
   analyser.value=audioCtx.createAnalyser();
   analyser.value.fftSizze=512;
   // 接收分析器节点的分析数据
-  console.log(analyser.value,'analyser.value')
   const a=new Uint8Array(analyser.value.frequencyBinCount);
   console.log( a,'aaaa')
   dataArray.value=a;
@@ -84,16 +81,12 @@ const draw=()=> {
   // 使用可选链操作符来安全地访问属性?.
   const width=cvs.value?.width;
   const height=cvs.value?.height;
-  console.log(cvs.value?.width,'11111')
 
   ctx.value.clearRect(0,0,width,height);
-  console.log(isInit.value,'isInit')
   if (!isInit.value) {
     return ;
   }
   // 让分析器节点分析出数据到数组中
-  console.log(dataArray.value,'dataArray')
-  console.log(analyser.value,'analyser.value.');
   analyser.value.getByteFrequencyData(dataArray.value);
   const len=dataArray.value.length/2;//条的数量,取一半，前半部分（低频范围就好，高频部分人耳几乎听不到，看不到波形）
   const barWidth=width/len/2;// 条的宽度
