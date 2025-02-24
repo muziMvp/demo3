@@ -1,31 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/audio">Audio</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss">
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
 }
 
-nav {
-  padding: 30px;
+.star-box {
+  color: gray;
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  padding-top: 5px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.star-box .orange {
+  color: orange;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.gray {
+  color: #ccc;
+}
+
+.score {
+  color: gray;
+  font-size: 10px;
+}
+
+.no-score {
+  margin-top: 6px;
+  color: gray;
+  font-size: 10px;
 }
 </style>

@@ -2,6 +2,7 @@
   <div class="box">
     我是内容
     <button @click='btn'>按钮</button>
+    <!-- teleport 传送门 -->
     <teleport to="body">
       <div class="mo" v-if="show"></div>
     </teleport>

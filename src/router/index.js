@@ -19,6 +19,17 @@ const routes = [
     path:'/audio',
     name:'audio',
     component:()=> import('../views/AudioVisual.vue')
+  },
+  {
+    path:'/list/:type',
+    name:'list',
+    component:()=> import('../views/List.vue')
+  },
+  ,
+  {
+    path:'/detail/:id',
+    name:'detail',
+    component:()=> import('../views/Detail.vue')
   }
 ]
 

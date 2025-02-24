@@ -1,0 +1,4 @@
+:root {
+  --van-dialog-header-font-weight: 600 !important;
+  --van-overlay-z-index: 2000 !important;
+}
